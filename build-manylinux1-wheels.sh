@@ -23,7 +23,7 @@ for whl in wheelhouse/*linux*.whl; do
 done
 
 # Install packages and test
-for PYBIN in /opt/python/*/bin/; do
+for PYBIN in /opt/python/cp*/bin/; do
     PYVER=$(echo "${PYBIN}" | cut -d'/' -f 4)
 
     # amqp 5.0.0a1 and vine 5.0.0a1 breaks python2
