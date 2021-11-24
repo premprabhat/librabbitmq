@@ -62,7 +62,7 @@ manylinux1: dist
 	 
 qemu: docker run --rm --privileged tonistiigi/binfmt:latest --install all
 
-manylinux2014-aarch64: dist
+manylinuxaarch64: qemu
 	 docker run --rm -v `pwd`:/workspace:z quay.io/pypa/manylinux2014_aarch64  /workspace/build-manylinux1-wheels.sh
 
 rebuild:
