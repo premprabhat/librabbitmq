@@ -21,6 +21,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         sudo apt-get -y install make
+    - name: Set up QEMU
+      id: qemu
+      uses: docker/setup-qemu-action@v1
+
     - name: Build wheel
       run: |
         make manylinux1
