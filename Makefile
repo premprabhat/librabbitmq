@@ -59,8 +59,6 @@ dist: rabbitmq-c $(RABBIT_TARGET)
 
 manylinux1: dist
 	 docker run --rm -v `pwd`:/workspace:z quay.io/pypa/manylinux2014_aarch64  /workspace/build-manylinux1-wheels.sh
-	 docker run --rm -v `pwd`:/workspace:z quay.io/pypa/manylinux1_x86_64  /workspace/build-manylinux1-wheels.sh
-
 rebuild:
 	$(PYTHON) setup.py build
 	$(PYTHON) setup.py install
