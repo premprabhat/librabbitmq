@@ -20,10 +20,14 @@ jobs:
       run: |
         sudo apt-get -y install make
 
+    - name: ls command before
+      run: ls wheelhouse/*
+
     - name: Build wheel aarch64
       run: |
         make manylinuxaarch64
-    - name: Build wheel
+
+    - name: ls command
       run: ls wheelhouse/*
     - name: Build wheel
       run: |
