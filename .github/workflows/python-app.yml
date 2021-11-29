@@ -24,5 +24,7 @@ jobs:
       run: |
         make manylinuxaarch64
     - name: Build wheel
+      run: ls wheelhouse/*
+    - name: Build wheel
       run: |
         make manylinux1
