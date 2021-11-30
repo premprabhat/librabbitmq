@@ -6,7 +6,7 @@ set -e -x
 yum install -y cmake openssl-devel gcc automake
 
 # Compile wheels
-for PYBIN in /opt/python/*/bin; do
+for PYBIN in /opt/python/cp*/bin; do
     # Ensure a fresh build of rabbitmq-c.
     (cd /workspace && PATH="${PYBIN}:${PATH}" make clean)
     (cd /workspace && "${PYBIN}"/python setup.py install)
