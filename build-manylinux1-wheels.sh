@@ -33,6 +33,10 @@ for PYBIN in /opt/python/cp*/bin/; do
         "${PYBIN}"/pip install --force-reinstall "amqp==2.5.2"
     fi
 
+    if [[ "${PYVER}" == *"cp35"* ]]; then
+        continue
+    fi
+
     "${PYBIN}"/pip install librabbitmq --no-index -f "${TMP_WHEELHOUSE}"/*-"${PYVER}"-*.whl
     "${PYBIN}"/python -c "import librabbitmq"
     #(cd $HOME; ${PYBIN}/nosetests pymanylinuxdemo)
