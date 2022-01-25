@@ -43,4 +43,5 @@ for PYBIN in /opt/python/cp*/bin/; do
     mv -f "${TMP_WHEELHOUSE}"/*-"${PYVER}"-*.whl ${WHEELHOUSE}
 done
 
+ls -l "${TMP_WHEELHOUSE}"
 rmdir "${TMP_WHEELHOUSE}"
