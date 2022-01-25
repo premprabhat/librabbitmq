@@ -10,6 +10,9 @@ for PYBIN in /opt/python/cp*/bin; do
     # Ensure a fresh build of rabbitmq-c.
     (cd /workspace && PATH="${PYBIN}:${PATH}" make clean)
     (cd /workspace && "${PYBIN}"/python setup.py install)
+    if [[ "${PYVER}" == *"cp35"* ]]; then
+        continue
+    fi
     "${PYBIN}"/pip wheel /workspace/ -w wheelhouse/
 done
 
