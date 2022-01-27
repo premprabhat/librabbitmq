@@ -8,11 +8,11 @@ yum install -y cmake openssl-devel gcc automake
 # Compile wheels
 for PYBIN in /opt/python/cp*/bin; do
     # Ensure a fresh build of rabbitmq-c.
-    (cd /workspace && PATH="${PYBIN}:${PATH}" make clean)
-    (cd /workspace && "${PYBIN}"/python setup.py install)
     if [[ "${PYVER}" == *"cp35"* ]]; then
         continue
     fi
+    (cd /workspace && PATH="${PYBIN}:${PATH}" make clean)
+    (cd /workspace && "${PYBIN}"/python setup.py install)
     "${PYBIN}"/pip wheel /workspace/ -w wheelhouse/
 done
 
