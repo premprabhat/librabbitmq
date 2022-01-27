@@ -8,6 +8,7 @@ yum install -y cmake openssl-devel gcc automake
 # Compile wheels
 for PYBIN in /opt/python/cp*/bin; do
     # Ensure a fresh build of rabbitmq-c.
+    PYVER=$(echo "${PYBIN}" | cut -d'/' -f 4)
     if [[ "${PYVER}" == *"cp35"* ]]; then
         continue
     fi
